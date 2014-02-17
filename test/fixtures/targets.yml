@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  url: MyString
+  status: 
+  selector: MyString
+  linkreg: MyString
+  namereg: MyString
+  scancount: 
+  scantime: 2014-02-14 10:27:09
+  updatetime: 2014-02-14 10:27:09
+
+two:
+  name: MyString
+  url: MyString
+  status: 
+  selector: MyString
+  linkreg: MyString
+  namereg: MyString
+  scancount: 
+  scantime: 2014-02-14 10:27:09
+  updatetime: 2014-02-14 10:27:09

@@ -1,0 +1,44 @@
+<h1>Listing targets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Url</th>
+      <th>Status</th>
+      <th>Selector</th>
+      <th>Linkreg</th>
+      <th>Namereg</th>
+      <th>Scancount</th>
+      <th>Scantime</th>
+      <th>Updatetime</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @targets.each do |target| %>
+      <tr>
+        <td><%= target.name %></td>
+        <td><%= link_to target.url, target.url, target: "_blank" %></td>
+        <td><%= target.status %></td>
+        <td><%= target.selector %></td>
+        <td><%= target.linkreg %></td>
+        <td><%= target.namereg %></td>
+        <td><%= target.scancount %></td>
+        <td><%= target.scantime %></td>
+        <td><%= target.updatetime %></td>
+        <td><%= link_to 'Show', target %></td>
+        <td><%= link_to 'Edit', edit_target_path(target) %></td>
+        <td><%= link_to 'Destroy', target, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Run', controller: "targets", method: :run %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Target', new_target_path %>

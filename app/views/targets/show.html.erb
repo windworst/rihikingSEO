@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @target.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @target.url %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @target.status %>
+</p>
+
+<p>
+  <strong>Selector:</strong>
+  <%= @target.selector %>
+</p>
+
+<p>
+  <strong>Linkreg:</strong>
+  <%= @target.linkreg %>
+</p>
+
+<p>
+  <strong>Namereg:</strong>
+  <%= @target.namereg %>
+</p>
+
+<p>
+  <strong>Scancount:</strong>
+  <%= @target.scancount %>
+</p>
+
+<p>
+  <strong>Scantime:</strong>
+  <%= @target.scantime %>
+</p>
+
+<p>
+  <strong>Updatetime:</strong>
+  <%= @target.updatetime %>
+</p>
+
+<%= link_to 'Edit', edit_target_path(@target) %> |
+<%= link_to 'Back', targets_path %>
