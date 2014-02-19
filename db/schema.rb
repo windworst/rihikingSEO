@@ -11,18 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140217062111) do
+ActiveRecord::Schema.define(version: 20140214025150) do
 
   create_table "activities", force: true do |t|
     t.string   "name"
-    t.integer  "category_id"
+    t.integer  "target_id"
     t.string   "link"
-    t.integer  "status"
+    t.integer  "status_id",  default: 10
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "activities", ["category_id"], name: "index_activities_on_category_id"
+  add_index "activities", ["status_id"], name: "index_activities_on_status_id"
+  add_index "activities", ["target_id"], name: "index_activities_on_target_id"
 
   create_table "statuses", force: true do |t|
     t.string   "name"
@@ -31,13 +32,13 @@ ActiveRecord::Schema.define(version: 20140217062111) do
   end
 
   create_table "targets", force: true do |t|
-    t.string   "name",                                                 null: false
-    t.string   "url"
+    t.string   "name"
+    t.string   "url",                                                  null: false
     t.integer  "status",     default: 10,                              null: false
-    t.string   "selector",   default: "a:not([href^=\"javascript\"])", null: false
-    t.string   "linkreg",    default: ""
-    t.string   "namereg",    default: "D+"
-    t.integer  "scancount",  default: 0,                               null: false
+    t.string   "selector",   default: "a:not([href^=\"javascript\"])"
+    t.string   "linkreg"
+    t.string   "namereg",    default: "\\D+"
+    t.integer  "scancount",                                            null: false
     t.datetime "scantime"
     t.datetime "updatetime"
     t.datetime "created_at"

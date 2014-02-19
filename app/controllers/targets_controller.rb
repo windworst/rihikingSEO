@@ -42,14 +42,11 @@ class TargetsController < ApplicationController
     # @target = Target.findbyId
     require 'open-uri'
     @doc = Nokogiri::HTML(open(@target.url))
-    @links = @doc.css(@target.seletor)
+    @links = @doc.css(@target.selector)
     @links.each do |a|
       @activity = Activity.new
 
-      if a[:href] =~ Regexp.new(@target.linkreg)
-      else
-        next
-      end
+      next unless @target.linkreg.empty? or a[:href] =~ Regexp.new(@target.linkreg)
 
       # todo blacklist
       if a.content =~ Regexp.new(@target.namereg)
@@ -67,6 +64,7 @@ class TargetsController < ApplicationController
 
       @activity.category = @target.id
       @activity.status = 10
+      @activity
     end
   end
 
