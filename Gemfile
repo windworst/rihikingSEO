@@ -6,13 +6,13 @@ if RUBY_VERSION =~ /1.9/ # assuming you're running Ruby ~1.9
 end
 
 gem 'rails', '4.0.2'
-gem 'bootstrap-sass', '~>3.1.1'
 gem 'nokogiri'
-
+gem 'semantic-ui-sass'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails', '2.13.1'
+  gem 'rspec-rails', '~> 2.13.1'
+  gem 'factory_girl_rails', '~> 4.2.1'
   gem 'guard-rspec', '2.5.0'
 end
 
