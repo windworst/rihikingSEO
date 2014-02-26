@@ -1,6 +1,6 @@
-<h1>Listing targets</h1>
+<h1 class="ui header aligned center">Listing targets</h1>
 
-<table>
+<table class="ui table segment">
   <thead>
     <tr>
       <th>Name</th>
@@ -12,9 +12,7 @@
       <th>Scancount</th>
       <th>Scantime</th>
       <th>Updatetime</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Operate</th>
     </tr>
   </thead>
 
@@ -30,10 +28,20 @@
         <td><%= target.scancount %></td>
         <td><%= target.scantime %></td>
         <td><%= target.updatetime %></td>
-        <td><%= link_to 'Show', target %></td>
-        <td><%= link_to 'Edit', edit_target_path(target) %></td>
-        <td><%= link_to 'Destroy', target, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Run', controller: "targets", method: :run %></td>
+        <td>
+          <%= link_to target do %>
+            <i class="zoom in basic icon"></i>
+          <% end %>
+          <%= link_to edit_target_path(target) do %>
+            <i class="edit basic icon"></i>
+          <% end %>
+          <%= link_to target, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="delete basic icon"></i>
+          <% end %>
+          <%= link_to controller: "targets", method: :run do %>
+            <i class="clockwise basic icon"></i>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

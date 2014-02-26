@@ -1,4 +1,4 @@
-<%= form_for(@target) do |f| %>
+<%= form_for(@target, html: { class: "ui form segment" }) do |f| %>
   <% if @target.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@target.errors.count, "error") %> prohibited this target from being saved:</h2>
@@ -12,26 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, placeholder: "Name" %>
   </div>
   <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
+    <%= f.text_field :url, placeholder: "Url" %>
   </div>
   <div class="field">
-    <%= f.label :selector %><br>
-    <%= f.text_field :selector %>
+    <%= f.text_field :selector, placeholder: "Selector" %>
   </div>
   <div class="field">
-    <%= f.label :linkreg %><br>
-    <%= f.text_field :linkreg %>
+    <%= f.text_field :linkreg, placeholder: "Linkreg" %>
   </div>
   <div class="field">
-    <%= f.label :namereg %><br>
-    <%= f.text_field :namereg %>
+    <%= f.text_field :namereg, placeholder: "Namereg" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Submit', class:"ui blue submit button floated widget right" %>
   </div>
 <% end %>

@@ -7,7 +7,7 @@ class CreateTargets < ActiveRecord::Migration
       t.string :selector, default: 'a:not([href^="javascript"])'
       t.string :linkreg
       t.string :namereg, default: '\D+'
-      t.integer :scancount, null: false
+      t.integer :scancount, default: 0, null: false
       t.datetime :scantime
       t.datetime :updatetime
 

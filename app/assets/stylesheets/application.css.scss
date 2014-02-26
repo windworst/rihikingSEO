@@ -11,6 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+/* reset */
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, address, cite, code,
@@ -47,11 +49,73 @@ blockquote, q {
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-	content: '';
-	content: none;
+    content: '';
+    content: none;
 }
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
-@import "semantic-ui";
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+    background: transparent;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a {
+    color: #428bca;
+    text-decoration: none;
+}
+a:active,
+a:hover {
+    outline: 0;
+}
+a:hover,
+a:focus {
+    color: #2a6496;
+}
+body {
+    background-color: #fff;
+    color: #333;
+    font-family: "Open Sans", verdana, arial, "Heiti SC", helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+p, ol, ul, td {
+    font-family: "Open Sans", verdana, arial, "Heiti SC", helvetica, sans-serif;
+    font-size: 13px;
+}
+
+/*
+this element will default to floating left if any float is specified
+it will receive margins on its float relative to its size
+*/
+.ui.floated.widget,
+.ui.left.floated.widget {
+  float: left;
+  margin-right: 1em;
+}
+.ui.right.floated.widget {
+  float: right;
+  margin-left: 1em;
+}
+/* this will not receive margins when floated and will default to floating right */
+.ui.floated.thingy,
+.ui.right.floated.thingy {
+  float: right;
+}
+.ui.right.floated.thingy {
+  float: left;
+}
+
+.ui.half {
+  width: 50%;
+}
+
+@import 'semantic-ui';
