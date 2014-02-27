@@ -1,24 +1,27 @@
 class TargetsController < ApplicationController
   before_action :set_target, only: [:show, :edit, :update, :destroy]
-
+  add_breadcrumb "targets", :targets_path
   # GET /targets
   # GET /targets.json
   def index
-    @targets = Target.all
+    @targets = Target.paginate(page: params[:page])
   end
 
   # GET /targets/1
   # GET /targets/1.json
   def show
+    add_breadcrumb @target.name
   end
 
   # GET /targets/new
   def new
     @target = Target.new
+    add_breadcrumb "new"
   end
 
   # GET /targets/1/edit
   def edit
+    add_breadcrumb "edit #{@target.name}"
   end
 
   # POST /targets

@@ -15,23 +15,34 @@ $KindleFire8: $Nexus72; $KindleFire9: $Nexus72;
 $iPad4: "2048px";
 $iPad: $iPad4; $iPad3: $iPad4;
 $Nexus10: "2560px";
-
+/* color */
 $gray: #999999;
 
 /* header */
 header.ui.inverted.menu{
+  width: 100%;
   border-radius: 0px;
+  position: fixed;
+  z-index: 20;
+}
+
+/* page */
+#page {
+  min-height: 100%;
+  padding: 45px 0 35px 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* footer */
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  position: absolute;
+  position: relative;
+  height: 30px;
   width: 100%;
   bottom: 5px;
-  left: 0;
+  z-index: 1;
   ul {
     float: right;
     list-style: none;
@@ -50,7 +61,7 @@ footer {
 
 
 /* custom */
-.new_form {
+.new_form , .edit_form {
   width: 50%;
   margin: 0 auto;
 }

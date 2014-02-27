@@ -6,8 +6,7 @@ if RUBY_VERSION =~ /1.9/ # assuming you're running Ruby ~1.9
 end
 
 gem 'rails', '4.0.2'
-gem 'nokogiri'
-gem 'semantic-ui-sass'
+
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
@@ -28,7 +27,11 @@ group :test do
   gem 'childprocess'
 end
 
+gem 'will_paginate', '~> 3.0'
+gem "breadcrumbs_on_rails"
 gem 'sass-rails', '~> 4.0.0'
+gem 'nokogiri'
+gem 'semantic-ui-sass'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
@@ -38,6 +41,10 @@ gem 'jbuilder', '~> 1.2'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :assets do
+  gem 'coffee-rails'
 end
 
 # Use ActiveModel has_secure_password

@@ -1,5 +1,4 @@
 <h1 class="ui header aligned center">Listing targets</h1>
-
 <table class="ui table segment">
   <thead>
     <tr>
@@ -46,7 +45,11 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
+<div class="digg_pagination">
+  <div class="page_info">
+    <%= page_entries_info @targets %>
+  </div>
+  <%= will_paginate @targets, :container => false %>
+</div>
 <%= link_to 'New Target', new_target_path %>

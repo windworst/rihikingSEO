@@ -2,6 +2,6 @@
   <%= link_to "/", class: "item #{currentPage("/")}" do %>
     <i class="home icon"></i>Home
   <% end %>
-  <%= link_to "Targets", targets_path, class: "item #{currentPage(targets_path)}" %>
-  <%= link_to "Activities", activities_path, class: "item #{currentPage(activities_path)}" %>
+  <%= nav_link "Targets", targets_path %>
+  <%= nav_link "Activities", activities_path %>
 </header>
