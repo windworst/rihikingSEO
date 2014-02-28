@@ -1,5 +1,4 @@
-<%= javascript_include_tag "target" %>
-<%= form_for(@target, html: { class: "ui form segment error" }) do |f| %>
+<%= form_for(@target, html: { class: "target-form ui form segment error" }) do |f| %>
   <% if @target.errors.any? %>
     <div id="error_explanation" class="ui error message">
       <h2 class="header">
