@@ -37,7 +37,7 @@
           <%= link_to target, method: :delete, data: { confirm: 'Are you sure?' } do %>
             <i class="delete basic icon"></i>
           <% end %>
-          <%= link_to controller: "targets", method: :run do %>
+          <%= link_to run_target_path(target) do %>
             <i class="clockwise basic icon"></i>
           <% end %>
         </td>

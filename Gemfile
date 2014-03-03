@@ -27,6 +27,7 @@ group :test do
   gem 'childprocess'
 end
 
+gem 'pundit'
 gem 'will_paginate', '~> 3.0'
 gem "breadcrumbs_on_rails"
 gem 'sass-rails', '~> 4.0.0'

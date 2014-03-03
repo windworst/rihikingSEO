@@ -1,4 +1,5 @@
 class TargetsController < ApplicationController
+  helper :targets
   before_action :set_target, only: [:show, :edit, :update, :destroy]
   add_breadcrumb "targets", :targets_path
   # GET /targets
@@ -40,35 +41,9 @@ class TargetsController < ApplicationController
     end
   end
 
-  # POST /targets/1/run
+  # GET /targets/1/run
   def run
-    # @target = Target.findbyId
-    require 'open-uri'
-    @doc = Nokogiri::HTML(open(@target.url))
-    @links = @doc.css(@target.selector)
-    @links.each do |a|
-      @activity = Activity.new
 
-      next unless @target.linkreg.empty? or a[:href] =~ Regexp.new(@target.linkreg)
-
-      # todo blacklist
-      if a.content =~ Regexp.new(@target.namereg)
-        @activity.name = a.content
-      else
-        next
-      end
-
-      if a[:href] =~ /(http|https):\/\/[^\s]*/
-        @activity.link = a[:href]
-      else
-        uri = URI.parse(@target.url)
-        @activity.link = uri.scheme + uri.host + "/" + a[:href]
-      end
-
-      @activity.category = @target.id
-      @activity.status = 10
-      @activity
-    end
   end
 
   # PATCH/PUT /targets/1
